@@ -1,89 +1,82 @@
-#Coverage Analysis for Deep Neural Networks
-A PyTorch-based framework for analyzing neuron activation coverage in VGG19, with confidence-aware training and adversarial detection.
+# Coverage Analysis for Neural Network Confidence
 
-PyTorch
-Detect out-of-distribution inputs by monitoring neuron activation patterns.
+This repository contains an implementation of the paper ["Increasing the Confidence of Deep Neural Networks by Coverage Analysis"](https://arxiv.org/abs/2101.12100). The code demonstrates how coverage analysis techniques can be used to improve the confidence assessment of neural networks, particularly for distinguishing between in-distribution and out-of-distribution inputs.
 
-📌 Overview
-This project enhances a VGG19 model with coverage tracking layers to:
+## Overview
 
-Monitor neuron activations during inference/training.
+Modern deep neural networks often produce high confidence predictions for inputs that are fundamentally different from their training data. This implementation explores techniques to address this issue by analyzing the activation patterns of neural networks through coverage analysis. By measuring how well a neural network's activations on new inputs match those observed during training, we can build a more reliable confidence measure.
 
-Detect untrusted inputs (e.g., adversarial samples or out-of-distribution data) by comparing activations against trusted baselines.
+## Implementation Details
 
-Improve model robustness via a custom ConfidenceLoss that penalizes deviations from expected activation patterns.
+The implementation is built around a modified VGG19 architecture that incorporates special coverage layers for monitoring neuron activations. Two main coverage techniques are implemented:
 
-Key Features:
+1. **Simple Range Coverage (SRC)** - Monitors whether neuron activations stay within ranges observed during training
+2. **Multi-Range Coverage (MRC)** - Extends SRC by tracking the distribution of activations across multiple value ranges
 
-✅ Multi-Region Coverage (MRC): Tracks activation distributions across value ranges.
+### Key Components
 
-✅ Source Region Coverage (SRC): Flags activations outside trusted bounds.
+- **VGG19WithCoverage**: Modified VGG19 network with coverage layers inserted after activation functions
+- **CoverageLayer**: Special layer that records neuron activations and computes section distributions
+- **SignatureGenerator**: Creates activation signatures from trusted data
+- **ConfidenceLoss**: Loss function that penalizes activations outside trusted ranges
+- **TrainingDataLogger**: Records and saves training metrics and coverage statistics
 
-✅ Confidence-aware metrics: Analyzes accuracy vs. confidence thresholds.
+## How It Works
 
-✅ Visualization-ready logs: Exports training stats (JSON/Pickle).
+1. The model is initialized with coverage layers throughout its architecture
+2. Activation signatures are generated from trusted training data
+3. During training, a custom confidence loss penalizes activations that deviate from the signatures
+4. The model learns to produce lower confidence scores for out-of-distribution inputs
 
-⚙️ Setup
-Dependencies
-pip install torch torchvision matplotlib numpy
+## Results and Evaluation
 
-Datasets
-Automatically downloads:
+The implementation evaluates:
+- Classification accuracy on trusted test data (CIFAR-10)
+- Confidence scores on trusted data vs. untrusted data (MNIST)
+- Coverage statistics comparing activation patterns on trusted vs. untrusted inputs
+- Distribution of confidence scores across different confidence bins
 
-CIFAR-10 (trusted data)
+## Usage
 
-MNIST (untrusted data, converted to 3-channel images)
+The code can be run directly from the [Coverage_Analysis.ipynb](https://github.com/rushilaryan/Coverage_Analysis/blob/main/Coverage_Analysis.ipynb) notebook. The implementation uses PyTorch and includes the following main phases:
 
-🚀 Usage
-1. Training with Coverage Monitoring
-python Coverage_Analysis.py
+1. **Setup**: Load datasets (CIFAR-10 as trusted, MNIST as untrusted)
+2. **Training**: Train the model with combined cross-entropy and confidence losses
+3. **Evaluation**: Compare model behavior on trusted vs. untrusted data
 
-Configurable Parameters:
+Example to run the main training pipeline:
 
-batch_size, epochs, learning_rate in main().
+```python
+# The main() function handles the complete pipeline
+if __name__ == "__main__":
+    main()
+```
 
-confidence_threshold: Min confidence score for high-confidence predictions.
+## Requirements
 
-method: 'mrc' (Multi-Region Coverage) or 'src' (Source Region Coverage).
+- PyTorch
+- torchvision
+- matplotlib
+- numpy
 
-2. Key Components
-VGG19WithCoverage: Modified VGG19 with 18 coverage layers.
+## Paper Reference
 
-SignatureGenerator: Computes trusted activation ranges (min/max) and distributions.
+This implementation is based on the paper:
+["Increasing the Confidence of Deep Neural Networks by Coverage Analysis"](https://arxiv.org/abs/2101.12100)
 
-ConfidenceLoss: Penalizes activations outside trusted patterns.
+The paper introduces techniques to align model confidence with correctness by using neuron activation patterns to identify out-of-distribution inputs.
 
-3. Outputs
-Training logs: Saved as training_results_<timestamp>.json/pkl.
+## Key Innovations
 
-Metrics:
+- **Coverage Layers**: Non-intrusive monitoring of activations throughout the network
+- **Activation Signatures**: Compact representation of expected activation patterns
+- **Confidence Loss**: Training objective that penalizes activations outside trusted ranges
+- **Distribution Monitoring**: Analysis of how activation distributions shift for out-of-distribution data
 
-Layer-wise coverage percentages (trusted vs. untrusted data).
+## Future Work
 
-Confidence bin accuracies (0.0-0.2, 0.2-0.4, etc.).
-
-📊 Example Results
-Trusted vs. Untrusted Coverage
-Layer	Trusted Coverage (%)	Untrusted Coverage (%)
-1	98.5	62.3
-2	97.8	58.1
-Confidence-Accuracy Relationship
-Confidence-Accuracy Plot (Replace with actual plot from your logs)
-
-🛠️ Customization
-Extending to Other Models
-Subclass nn.Module and add CoverageLayers after desired layers.
-
-Update SignatureGenerator and ConfidenceLoss for new layer indices.
-
-Adding New Datasets
-Modify the transforms and DataLoader in main():
-untrusted_loader = DataLoader(YourDataset(...), ...)
-
-## 📜 License  
-MIT License. See `LICENSE` for details.  
-
-## 🔗 Relevant Papers
-- [Increasing the Confidence of Deep Neural Networks by Coverage Analysis](https://arxiv.org/abs/2101.12100)  
-  *Authors: John Doe et al. (2021)* - Introduces coverage-guided confidence estimation for DNNs.
-
+Potential improvements and extensions:
+- Support for additional model architectures
+- Integration with other confidence calibration techniques
+- Exploration of more sophisticated distribution comparison metrics
+- Application to adversarial detection and robustness
