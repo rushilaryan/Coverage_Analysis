@@ -14,12 +14,17 @@ This document contains sample output logs from running the Coverage Analysis imp
 ## Training Output
 
 Training Output
+
 Using device: cuda
-Files already downloaded and verified
-Files already downloaded and verified
+
 Files already downloaded and verified
 
-###==================== Epoch 1/10 ====================
+Files already downloaded and verified
+
+Files already downloaded and verified
+
+==================== Epoch 1/10 ====================
+
 Train Epoch: 1 [0/50000] Loss: 2.2655, CE: 2.2650, Conf Loss: 0.0005, Accuracy: 20.31%, High Conf Acc: 0.00%, Time: 1.06s
 
 Train Epoch: 1 [6400/50000] Loss: 0.4927, CE: 0.4667, Conf Loss: 0.0260, Accuracy: 59.98%, High Conf Acc: 95.05%, Time: 57.62s
@@ -49,26 +54,44 @@ Trusted data avg confidence: 0.8929
 Untrusted data avg confidence: 0.5085
 
 Coverage Comparison (trusted vs untrusted):
+
   Layer 1: 99.98% vs 99.45% coverage
+
   Layer 2: 100.00% vs 99.71% coverage
+
   Layer 3: 100.00% vs 99.90% coverage
+
   Layer 4: 100.00% vs 99.91% coverage
+
   Layer 5: 100.00% vs 99.94% coverage
 
+
 Epoch 1 Summary:
+
 Train - Loss: 0.5286, Accuracy: 82.47%
+
 Test - Loss: 0.2877, Accuracy: 90.18%
+
 Untrusted Data Avg Confidence: 0.5085
 
 ==================== Epoch 2/10 ====================
+
 Train Epoch: 2 [0/50000] Loss: 0.3456, CE: 0.3233, Conf Loss: 0.0223, Accuracy: 93.75%, High Conf Acc: 96.97%, Time: 0.96s
+
 Train Epoch: 2 [6400/50000] Loss: 0.3640, CE: 0.3374, Conf Loss: 0.0267, Accuracy: 90.25%, High Conf Acc: 98.26%, Time: 55.47s
+
 Train Epoch: 2 [12800/50000] Loss: 0.2925, CE: 0.2722, Conf Loss: 0.0203, Accuracy: 90.22%, High Conf Acc: 98.14%, Time: 109.99s
+
 Train Epoch: 2 [19200/50000] Loss: 0.4425, CE: 0.4216, Conf Loss: 0.0208, Accuracy: 90.25%, High Conf Acc: 98.20%, Time: 164.53s
+
 Train Epoch: 2 [25600/50000] Loss: 0.4156, CE: 0.3870, Conf Loss: 0.0287, Accuracy: 90.29%, High Conf Acc: 98.22%, Time: 219.11s
+
 Train Epoch: 2 [32000/50000] Loss: 0.4204, CE: 0.3884, Conf Loss: 0.0321, Accuracy: 90.38%, High Conf Acc: 98.24%, Time: 273.66s
+
 Train Epoch: 2 [38400/50000] Loss: 0.2814, CE: 0.2610, Conf Loss: 0.0205, Accuracy: 90.45%, High Conf Acc: 98.26%, Time: 328.14s
+
 Train Epoch: 2 [44800/50000] Loss: 0.2171, CE: 0.1951, Conf Loss: 0.0220, Accuracy: 90.46%, High Conf Acc: 98.28%, Time: 382.69s
+
 Train Epoch 2 Summary: Loss: 0.3006, CE: 0.2765, Conf Loss: 0.0241, Accuracy: 90.55%, High Conf Acc: 98.33%
 
 Evaluating on trusted data...
@@ -76,30 +99,50 @@ Evaluating on trusted data...
 Evaluating on untrusted data...
 
 Confidence Comparison:
+
 Trusted data avg confidence: 0.9209
+
 Untrusted data avg confidence: 0.5796
 
 Coverage Comparison (trusted vs untrusted):
+
   Layer 1: 99.98% vs 99.05% coverage
+  
   Layer 2: 100.00% vs 99.73% coverage
+  
   Layer 3: 100.00% vs 99.89% coverage
+  
   Layer 4: 100.00% vs 99.91% coverage
+  
   Layer 5: 100.00% vs 99.93% coverage
+  
 
 Epoch 2 Summary:
+
 Train - Loss: 0.3006, Accuracy: 90.55%
+
 Test - Loss: 0.2492, Accuracy: 91.50%
+
 Untrusted Data Avg Confidence: 0.5796
 
 ==================== Epoch 3/10 ====================
+
 Train Epoch: 3 [0/50000] Loss: 0.2115, CE: 0.1895, Conf Loss: 0.0220, Accuracy: 92.19%, High Conf Acc: 100.00%, Time: 1.00s
+
 Train Epoch: 3 [6400/50000] Loss: 0.1841, CE: 0.1557, Conf Loss: 0.0284, Accuracy: 92.93%, High Conf Acc: 98.81%, Time: 55.49s
+
 Train Epoch: 3 [12800/50000] Loss: 0.4512, CE: 0.4269, Conf Loss: 0.0243, Accuracy: 92.45%, High Conf Acc: 98.59%, Time: 110.04s
+
 Train Epoch: 3 [19200/50000] Loss: 0.2215, CE: 0.1979, Conf Loss: 0.0236, Accuracy: 92.39%, High Conf Acc: 98.58%, Time: 164.56s
+
 Train Epoch: 3 [25600/50000] Loss: 0.2016, CE: 0.1741, Conf Loss: 0.0276, Accuracy: 92.55%, High Conf Acc: 98.60%, Time: 219.08s
+
 Train Epoch: 3 [32000/50000] Loss: 0.2685, CE: 0.2476, Conf Loss: 0.0208, Accuracy: 92.45%, High Conf Acc: 98.60%, Time: 273.63s
+
 Train Epoch: 3 [38400/50000] Loss: 0.1635, CE: 0.1371, Conf Loss: 0.0264, Accuracy: 92.42%, High Conf Acc: 98.64%, Time: 328.18s
+
 Train Epoch: 3 [44800/50000] Loss: 0.1204, CE: 0.0931, Conf Loss: 0.0272, Accuracy: 92.40%, High Conf Acc: 98.65%, Time: 382.73s
+
 Train Epoch 3 Summary: Loss: 0.2471, CE: 0.2211, Conf Loss: 0.0259, Accuracy: 92.41%, High Conf Acc: 98.67%
 
 Evaluating on trusted data...
@@ -107,30 +150,49 @@ Evaluating on trusted data...
 Evaluating on untrusted data...
 
 Confidence Comparison:
+
 Trusted data avg confidence: 0.9290
+
 Untrusted data avg confidence: 0.5898
 
+
 Coverage Comparison (trusted vs untrusted):
+
   Layer 1: 99.97% vs 98.59% coverage
+  
   Layer 2: 99.99% vs 98.71% coverage
+  
   Layer 3: 100.00% vs 99.86% coverage
+  
   Layer 4: 100.00% vs 99.86% coverage
+  
   Layer 5: 100.00% vs 99.91% coverage
+  
 
 Epoch 3 Summary:
+
 Train - Loss: 0.2471, Accuracy: 92.41%
+
 Test - Loss: 0.2255, Accuracy: 92.30%
+
 Untrusted Data Avg Confidence: 0.5898
 
 ==================== Epoch 4/10 ====================
+
 Train Epoch: 4 [0/50000] Loss: 0.1571, CE: 0.1205, Conf Loss: 0.0366, Accuracy: 96.88%, High Conf Acc: 98.31%, Time: 0.92s
+
 Train Epoch: 4 [6400/50000] Loss: 0.3253, CE: 0.3013, Conf Loss: 0.0240, Accuracy: 94.29%, High Conf Acc: 98.99%, Time: 55.42s
+
 Train Epoch: 4 [12800/50000] Loss: 0.1891, CE: 0.1600, Conf Loss: 0.0291, Accuracy: 94.05%, High Conf Acc: 98.92%, Time: 109.94s
+
 Train Epoch: 4 [19200/50000] Loss: 0.2092, CE: 0.1804, Conf Loss: 0.0288, Accuracy: 93.88%, High Conf Acc: 98.81%, Time: 164.49s
-Train Epoch: 4 [25600/50000] Loss: 0.1864, CE: 0.1522, Conf Loss: 0.0342, Accuracy: 93.81%, High Conf Acc: 98.89%, Time: 219.05s
+
 Train Epoch: 4 [32000/50000] Loss: 0.1336, CE: 0.1036, Conf Loss: 0.0301, Accuracy: 93.68%, High Conf Acc: 98.85%, Time: 273.62s
+
 Train Epoch: 4 [38400/50000] Loss: 0.1123, CE: 0.0869, Conf Loss: 0.0254, Accuracy: 93.57%, High Conf Acc: 98.83%, Time: 328.21s
+
 Train Epoch: 4 [44800/50000] Loss: 0.3405, CE: 0.3115, Conf Loss: 0.0290, Accuracy: 93.65%, High Conf Acc: 98.87%, Time: 382.76s
+
 Train Epoch 4 Summary: Loss: 0.2111, CE: 0.1816, Conf Loss: 0.0294, Accuracy: 93.73%, High Conf Acc: 98.89%
 
 Evaluating on trusted data...
@@ -138,31 +200,53 @@ Evaluating on trusted data...
 Evaluating on untrusted data...
 
 Confidence Comparison:
+
 Trusted data avg confidence: 0.9392
+
 Untrusted data avg confidence: 0.6708
 
+
 Coverage Comparison (trusted vs untrusted):
+
   Layer 1: 99.96% vs 98.72% coverage
+  
   Layer 2: 99.99% vs 99.63% coverage
+  
   Layer 3: 100.00% vs 99.87% coverage
+  
   Layer 4: 100.00% vs 99.89% coverage
+  
   Layer 5: 100.00% vs 99.93% coverage
 
 Epoch 4 Summary:
+
 Train - Loss: 0.2111, Accuracy: 93.73%
+
 Test - Loss: 0.2161, Accuracy: 92.30%
+
 Untrusted Data Avg Confidence: 0.6708
 
+
 ==================== Epoch 5/10 ====================
+
 Updating activation signatures...
+
 Train Epoch: 5 [0/50000] Loss: 0.0849, CE: 0.0846, Conf Loss: 0.0004, Accuracy: 98.44%, High Conf Acc: 100.00%, Time: 0.96s
+
 Train Epoch: 5 [6400/50000] Loss: 0.1357, CE: 0.1345, Conf Loss: 0.0012, Accuracy: 94.71%, High Conf Acc: 99.10%, Time: 56.10s
+
 Train Epoch: 5 [12800/50000] Loss: 0.1709, CE: 0.1701, Conf Loss: 0.0008, Accuracy: 94.66%, High Conf Acc: 98.92%, Time: 110.79s
+
 Train Epoch: 5 [19200/50000] Loss: 0.2381, CE: 0.2368, Conf Loss: 0.0012, Accuracy: 94.60%, High Conf Acc: 98.98%, Time: 166.10s
+
 Train Epoch: 5 [25600/50000] Loss: 0.0987, CE: 0.0981, Conf Loss: 0.0006, Accuracy: 94.67%, High Conf Acc: 99.05%, Time: 220.72s
+
 Train Epoch: 5 [32000/50000] Loss: 0.1154, CE: 0.1144, Conf Loss: 0.0009, Accuracy: 94.67%, High Conf Acc: 99.07%, Time: 275.38s
+
 Train Epoch: 5 [38400/50000] Loss: 0.0884, CE: 0.0877, Conf Loss: 0.0007, Accuracy: 94.73%, High Conf Acc: 99.06%, Time: 330.08s
+
 Train Epoch: 5 [44800/50000] Loss: 0.0880, CE: 0.0874, Conf Loss: 0.0006, Accuracy: 94.64%, High Conf Acc: 99.05%, Time: 385.26s
+
 Train Epoch 5 Summary: Loss: 0.1566, CE: 0.1557, Conf Loss: 0.0009, Accuracy: 94.61%, High Conf Acc: 99.04%
 
 Evaluating on trusted data...
@@ -170,19 +254,31 @@ Evaluating on trusted data...
 Evaluating on untrusted data...
 
 Confidence Comparison:
+
 Trusted data avg confidence: 0.9406
+
 Untrusted data avg confidence: 0.6662
 
+
 Coverage Comparison (trusted vs untrusted):
+
   Layer 1: 99.98% vs 98.37% coverage
+  
   Layer 2: 100.00% vs 99.75% coverage
+  
   Layer 3: 100.00% vs 99.86% coverage
+  
   Layer 4: 100.00% vs 99.83% coverage
+  
   Layer 5: 100.00% vs 99.88% coverage
+  
 
 Epoch 5 Summary:
+
 Train - Loss: 0.1566, Accuracy: 94.61%
+
 Test - Loss: 0.1930, Accuracy: 93.17%
+
 Untrusted Data Avg Confidence: 0.6662
 
 ==================== Epoch 6/10 ====================
