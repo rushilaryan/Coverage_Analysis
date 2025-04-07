@@ -1,13 +1,17 @@
-V100 GPU Run Logs
-This document contains sample output logs from running the Coverage Analysis implementation on an NVIDIA Tesla V100 GPU. These logs demonstrate the expected performance, training progress, and results when using high-performance GPU hardware.
-System Configuration
+# V100 GPU Run Logs
 
-GPU: NVIDIA Tesla V100 (16GB VRAM)
-CUDA Version: 11.4
-PyTorch Version: 1.10.0
-Operating System: Ubuntu 20.04 LTS
-CPU: Intel Xeon Gold 6248R (24 cores)
-RAM: 128GB
+This document contains sample output logs from running the Coverage Analysis implementation on an NVIDIA Tesla V100 GPU. These logs demonstrate the expected performance, training progress, and results when using high-performance GPU hardware.
+
+## System Configuration
+
+- **GPU**: NVIDIA Tesla V100 (16GB VRAM)
+- **CUDA Version**: 11.4
+- **PyTorch Version**: 1.10.0
+- **Operating System**: Ubuntu 20.04 LTS
+- **CPU**: Intel Xeon Gold 6248R (24 cores)
+- **RAM**: 128GB
+
+## Training Output
 
 Training Output
 Using device: cuda
@@ -15,15 +19,23 @@ Files already downloaded and verified
 Files already downloaded and verified
 Files already downloaded and verified
 
-==================== Epoch 1/10 ====================
+###==================== Epoch 1/10 ====================
 Train Epoch: 1 [0/50000] Loss: 2.2655, CE: 2.2650, Conf Loss: 0.0005, Accuracy: 20.31%, High Conf Acc: 0.00%, Time: 1.06s
+
 Train Epoch: 1 [6400/50000] Loss: 0.4927, CE: 0.4667, Conf Loss: 0.0260, Accuracy: 59.98%, High Conf Acc: 95.05%, Time: 57.62s
+
 Train Epoch: 1 [12800/50000] Loss: 0.5621, CE: 0.5421, Conf Loss: 0.0200, Accuracy: 70.18%, High Conf Acc: 96.45%, Time: 112.16s
+
 Train Epoch: 1 [19200/50000] Loss: 0.5704, CE: 0.5543, Conf Loss: 0.0161, Accuracy: 74.82%, High Conf Acc: 96.68%, Time: 167.30s
+
 Train Epoch: 1 [25600/50000] Loss: 0.3622, CE: 0.3386, Conf Loss: 0.0236, Accuracy: 77.70%, High Conf Acc: 97.05%, Time: 225.46s
+
 Train Epoch: 1 [32000/50000] Loss: 0.2017, CE: 0.1753, Conf Loss: 0.0264, Accuracy: 79.55%, High Conf Acc: 97.19%, Time: 284.11s
+
 Train Epoch: 1 [38400/50000] Loss: 0.2878, CE: 0.2680, Conf Loss: 0.0198, Accuracy: 80.80%, High Conf Acc: 97.30%, Time: 343.64s
+
 Train Epoch: 1 [44800/50000] Loss: 0.2208, CE: 0.1910, Conf Loss: 0.0297, Accuracy: 81.92%, High Conf Acc: 97.47%, Time: 399.40s
+
 Train Epoch 1 Summary: Loss: 0.5286, CE: 0.5055, Conf Loss: 0.0231, Accuracy: 82.47%, High Conf Acc: 97.56%
 
 Evaluating on trusted data...
@@ -31,7 +43,9 @@ Evaluating on trusted data...
 Evaluating on untrusted data...
 
 Confidence Comparison:
+
 Trusted data avg confidence: 0.8929
+
 Untrusted data avg confidence: 0.5085
 
 Coverage Comparison (trusted vs untrusted):
@@ -266,7 +280,9 @@ Untrusted Data Avg Confidence: 0.6985
 
 ==================== Epoch 9/10 ====================
 Train Epoch: 9 [0/50000] Loss: 0.0348, CE: 0.0333, Conf Loss: 0.0015, Accuracy: 100.00%, High Conf Acc: 100.00%, Time: 0.89s
+
 Train Epoch: 9 [6400/50000] Loss: 0.0675, CE: 0.0634, Conf Loss: 0.0041, Accuracy: 97.26%, High Conf Acc: 99.54%, Time: 55.35s
+
 Train Epoch: 9 [12800/50000] Loss: 0.2581, CE: 0.2559, Conf Loss: 0.0022, Accuracy: 97.15%, High Conf Acc: 99.48%, Time: 109.86s
 Train Epoch: 9 [19200/50000] Loss: 0.0856, CE: 0.0833, Conf Loss: 0.0023, Accuracy: 96.97%, High Conf Acc: 99.43%, Time: 164.33s
 Train Epoch: 9 [25600/50000] Loss: 0.0245, CE: 0.0219, Conf Loss: 0.0026, Accuracy: 97.10%, High Conf Acc: 99.46%, Time: 218.79s
